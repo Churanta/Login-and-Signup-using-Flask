@@ -3,7 +3,7 @@
 
 This is a Flask admin dashboard template that displays user information in a tabular format.
 
-![Admin Dashboard Screenshot](screenshots/admin_dashboard.png)
+![Login](screenshots/login.jpg)
 
 ## Installation
 

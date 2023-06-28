@@ -3,8 +3,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Admin Dashboard</h1>
-    <table style="width: 100%; border-collapse: collapse;">
+    <h1 style="text-align: center; margin-bottom: 20px;">Admin Dashboard</h1>
+    <table style="width: 800px; margin: 0 auto; border-collapse: collapse; background-color: #f8f8f8;">
         <thead>
             <tr>
                 <th style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">ID</th>
@@ -16,11 +16,13 @@
         </thead>
         <tbody>
             {% for user in users %}
-                <tr>
+                <tr style="background-color: {{ 'lightgreen' if loop.index is divisibleby 2 else 'white' }};">
                     <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">{{ user['id'] }}</td>
                     <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">{{ user['username'] }}</td>
-                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;"><img src="{{ url_for('static', filename='/photos/' + user['photo']) }}" alt="User Photo" style="width: 100px; border-radius: 50%;"></td>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;"><img src="{{ url_for('static', filename= user['photo']) }}" alt="User Photo" style="width: 100px; border-radius: 50%;"></td>
                     <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">{{ user['mobile_number'] }}</td>
+
+
                     <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">
                         <!-- Actions -->
                     </td>

@@ -101,8 +101,8 @@ def admin_dashboard():
         user_dict = {
             'id': user[0],
             'username': user[1],
-            'photo': user[2],
-            'mobile_number': user[3]
+            'photo': user[4],
+            'mobile_number': user[5]
         }
         users_dict.append(user_dict)
 

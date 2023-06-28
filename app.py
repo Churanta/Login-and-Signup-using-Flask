@@ -44,7 +44,7 @@ def signup():
         mysql.connection.commit()
         cur.close()
 
-        return redirect(url_for('home'))
+        return redirect(url_for('login'))
 
     return render_template('signup.html')
 
@@ -87,7 +87,6 @@ def admin_login():
 
     return render_template('admin_login.html')
 
-# Admin dashboard
 @app.route('/admin/dashboard')
 def admin_dashboard():
     # Fetch all user details from the database
@@ -96,7 +95,20 @@ def admin_dashboard():
     users = cur.fetchall()
     cur.close()
 
-    return render_template('admin_dashboard.html', users=users)
+    # Convert fetched tuples to dictionaries
+    users_dict = []
+    for user in users:
+        user_dict = {
+            'id': user[0],
+            'username': user[1],
+            'photo': user[2],
+            'mobile_number': user[3]
+        }
+        users_dict.append(user_dict)
+
+    return render_template('admin_dashboard.html', users=users_dict)
+
+
 
 # Logout
 @app.route('/logout')

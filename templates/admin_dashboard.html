@@ -4,26 +4,25 @@
 
 {% block content %}
     <h1>Admin Dashboard</h1>
-    <table>
+    <table style="width: 100%; border-collapse: collapse;">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Photo</th>
-                <th>Mobile Number</th>
-                <th>Actions</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">ID</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">Username</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">Photo</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">Mobile Number</th>
+
             </tr>
         </thead>
         <tbody>
             {% for user in users %}
                 <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.username }}</td>
-                    <td><img src="{{ url_for('static', filename='user_photos/' + user.photo) }}" alt="User Photo" width="100"></td>
-                    <td>{{ user.mobile_number }}</td>
-                    <td>
-                        <a href="{{ url_for('update_user', user_id=user.id) }}">Update</a>
-                        <a href="{{ url_for('delete_user', user_id=user.id) }}">Delete</a>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">{{ user['id'] }}</td>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">{{ user['username'] }}</td>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;"><img src="{{ url_for('static', filename='/photos/' + user['photo']) }}" alt="User Photo" style="width: 100px; border-radius: 50%;"></td>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">{{ user['mobile_number'] }}</td>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid #ddd;">
+                        <!-- Actions -->
                     </td>
                 </tr>
             {% endfor %}

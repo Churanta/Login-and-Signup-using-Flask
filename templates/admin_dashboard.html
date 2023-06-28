@@ -1,0 +1,32 @@
+<!-- templates/admin_dashboard.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Admin Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+                <th>Mobile Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td><img src="{{ url_for('static', filename='user_photos/' + user.photo) }}" alt="User Photo" width="100"></td>
+                    <td>{{ user.mobile_number }}</td>
+                    <td>
+                        <a href="{{ url_for('update_user', user_id=user.id) }}">Update</a>
+                        <a href="{{ url_for('delete_user', user_id=user.id) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

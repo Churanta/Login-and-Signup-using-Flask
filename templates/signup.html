@@ -1,26 +1,85 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>User Signup</h1>
-    <form id="signup-form" method="POST" action="{{ url_for('signup') }}" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
-        <label for="username" style="display: block; margin-bottom: 10px;">Username:</label>
-        <input type="text" id="username" name="username" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
+    <style>
+        body {
+            background-color: #2196F3;
+        }
+
+        .signup-card {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-top: 100px;
+        }
+
+        .signup-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .signup-form input[type="text"],
+        .signup-form input[type="email"],
+        .signup-form input[type="password"],
+        .signup-form input[type="file"],
+        .signup-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .signup-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #333;
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="signup-card">
+        <h1>User Signup</h1>
+        <form class="signup-form" method="POST" action="{{ url_for('signup') }}" enctype="multipart/form-data">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm_password" required><br>
+            
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="photo" required><br>
+            
+            <label for="mobile-number">Mobile Number:</label>
+            <input type="text" id="mobile-number" name="mobile_number" required><br>
+            
+            <input type="submit" value="Sign Up">
+        </form>
         
-        <label for="email" style="display: block; margin-bottom: 10px;">Email:</label>
-        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
-        
-        <label for="password" style="display: block; margin-bottom: 10px;">Password:</label>
-        <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
-        
-        <label for="confirm-password" style="display: block; margin-bottom: 10px;">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm_password" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
-        
-        <label for="photo" style="display: block; margin-bottom: 10px;">Photo:</label>
-        <input type="file" id="photo" name="photo" required style="margin-bottom: 20px;"><br>
-        
-        <label for="mobile-number" style="display: block; margin-bottom: 10px;">Mobile Number:</label>
-        <input type="text" id="mobile-number" name="mobile_number" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
-        
-        <input type="submit" value="Sign Up" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer;">
-    </form>
+        <div class="login-link">
+            Already have an account? <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </div>
 {% endblock %}

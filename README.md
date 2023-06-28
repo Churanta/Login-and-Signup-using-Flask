@@ -49,7 +49,7 @@ You can find screenshots of the admin dashboard below:
 
 ![Admin Dashboard Screenshot 2](screenshots/s1.jpg)
 
-![Admin Dashboard Screenshot 2](screenshots/s1.jpg)
+![Signup](screenshots/signup.jpg)
 
 ## License
 

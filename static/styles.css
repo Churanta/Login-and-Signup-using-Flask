@@ -48,6 +48,7 @@ nav ul li a:hover {
 /* Login and signup form styles */
 form {
     margin: 20px 0;
+    max-width: 400px;
 }
 
 label {
@@ -65,6 +66,10 @@ input[type="email"] {
     margin-bottom: 20px;
 }
 
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
 input[type="submit"] {
     background-color: #333;
     color: #fff;
@@ -77,19 +82,4 @@ input[type="submit"] {
 .error-message {
     color: #ff0000;
     margin-bottom: 10px;
-}
-
-/* Logout button */
-.logout-btn {
-    background-color: #ccc;
-    color: #333;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.logout-btn:hover {
-    background-color: #999;
 }

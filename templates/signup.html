@@ -1,28 +1,26 @@
-<!-- templates/signup.html -->
-
 {% extends 'base.html' %}
 
 {% block content %}
     <h1>User Signup</h1>
-    <form id="signup-form" method="POST" action="{{ url_for('signup') }}" enctype="multipart/form-data">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+    <form id="signup-form" method="POST" action="{{ url_for('signup') }}" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
+        <label for="username" style="display: block; margin-bottom: 10px;">Username:</label>
+        <input type="text" id="username" name="username" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
         
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+        <label for="email" style="display: block; margin-bottom: 10px;">Email:</label>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
         
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
+        <label for="password" style="display: block; margin-bottom: 10px;">Password:</label>
+        <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
         
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm_password" required><br>
+        <label for="confirm-password" style="display: block; margin-bottom: 10px;">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm_password" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
         
-        <label for="photo">Photo:</label>
-        <input type="file" id="photo" name="photo" required><br>
+        <label for="photo" style="display: block; margin-bottom: 10px;">Photo:</label>
+        <input type="file" id="photo" name="photo" required style="margin-bottom: 20px;"><br>
         
-        <label for="mobile-number">Mobile Number:</label>
-        <input type="text" id="mobile-number" name="mobile_number" required><br>
+        <label for="mobile-number" style="display: block; margin-bottom: 10px;">Mobile Number:</label>
+        <input type="text" id="mobile-number" name="mobile_number" required style="width: 100%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;"><br>
         
-        <input type="submit" value="Sign Up">
+        <input type="submit" value="Sign Up" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer;">
     </form>
 {% endblock %}
